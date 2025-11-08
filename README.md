@@ -1,6 +1,6 @@
 # Clinical Office: MPage Developer - Component Template
 
-Make sure you rename in all files to replace mpage-developer-component-template with the name of your project or your
+Make sure you rename in all files to replace patient-information-component with the name of your project or your
 project will be compiled under the wrong name.
 
 

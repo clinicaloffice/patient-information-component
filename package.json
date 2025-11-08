@@ -1,5 +1,5 @@
 {
-  "name": "mpage-developer-component-template",
+  "name": "patient-information-component",
   "version": "0.0.0",
   "scripts": {
     "serve": "ng serve --extra-webpack-config webpack.partial.js -o",

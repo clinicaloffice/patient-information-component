@@ -6,6 +6,6 @@ import {createCustomElement} from '@angular/elements';
 createApplication(appConfig)
   .then((app) => {
     const appComponent = createCustomElement(App, {injector: app.injector});
-    customElements.define('mpage-developer-component-template', appComponent);
+    customElements.define('patient-information-component', appComponent);
   })
   .catch((err) => console.error(err));

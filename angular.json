@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mpage-developer-component-template": {
+    "patient-information-component": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -39,7 +39,7 @@
         "build": {
           "builder": "ngx-build-plus:browser",
           "options": {
-            "outputPath": "dist/mpage-developer-component-template",
+            "outputPath": "dist/patient-information-component",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [],
@@ -91,10 +91,10 @@
           },
           "configurations": {
             "production": {
-              "buildTarget": "mpage-developer-component-template:build:production"
+              "buildTarget": "patient-information-component:build:production"
             },
             "development": {
-              "buildTarget": "mpage-developer-component-template:build:development"
+              "buildTarget": "patient-information-component:build:development"
             }
           },
           "defaultConfiguration": "development"

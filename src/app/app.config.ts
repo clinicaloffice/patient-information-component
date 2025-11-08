@@ -17,7 +17,7 @@ export class ShadowDomOverlayContainer extends OverlayContainer {
     container.classList.add('cdk-overlay-container');
 
     // Append to the Shadow DOM root instead of the document body
-    const shadowRoot = document.querySelector('mpage-developer-component-template')?.shadowRoot;
+    const shadowRoot = document.querySelector('patient-information-component')?.shadowRoot;
     if (shadowRoot) {
       shadowRoot.appendChild(container);
     } else {
