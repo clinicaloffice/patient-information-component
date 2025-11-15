@@ -151,5 +151,11 @@
 
 
 /* Custom Styles for this Page */
+.menu  {
+  border-bottom: 2px solid var(--primary-color);
+}
 
-// Add your custom styles here
+.field-label {
+  color: var(--accent-color-alternate);
+  font-size: smaller;
+}

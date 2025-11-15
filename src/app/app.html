@@ -1,5 +1,16 @@
-<h1>Create something wonderful.</h1>
+@if (!common.ready()) {
+<h2>Please Wait...Retrieving Patient Record.</h2>
+} @else {
+<div class="flex menu">
+    <tabbed-menu [tabs]="menuItems" (clickTab)="selectedMenu.set($event)" />
+</div>
 
-<mpage-log-component [properties]="{position: 'inline'}"></mpage-log-component>
+@switch (selectedMenu().idName) {
+@case('info') { <app-information /> }
+@case('reltionships') { <app-relationships /> }
+@case('provider-reltionships') { <app-providers /> }
+}
 
-<p>{{ path() }}</p>
+}
+
+<mpage-log-component [properties]="{position: 'inline'}" />

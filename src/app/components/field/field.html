@@ -1,0 +1,14 @@
+@if (!skipEmpty) {
+    <div class="flex-column">
+        <div class="field-label">{{ label() }}</div>
+        <div>
+        @if (isTextArray) {
+            @for (text of text(); track text) {
+               {{ text }}<br />
+            }
+        } @else {
+            {{ text() }}
+        }
+        </div>
+    </div>
+}
