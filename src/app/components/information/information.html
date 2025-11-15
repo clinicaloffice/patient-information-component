@@ -1,1 +1,33 @@
-info works
+@let patient = personService.get();
+
+<div class="grid-3-column">
+    <div class="section">
+        <div class="section-title">Patient</div>
+        <div class="grid-2-column">
+            <app-field label="Preferred Name" [text]="personService.getName('PREFERRED')?.nameFirst" />
+            <app-field label="Age" [text]="patient?.age" />
+            <app-field label="Language" [text]="patient?.language" />
+            <app-field label="Religion" [text]="patient?.religion" />
+            <app-field label="Marital Status" [text]="patient?.maritalType" />
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Addresses</div>
+        <div class="grid-2-column">
+            <app-field label="Home" [text]="common.addressToArray(addressService.get('HOME'))" />
+            <app-field label="Temporary" [text]="common.addressToArray(addressService.get('TEMPORARY'))" [skipIfEmpty]="true" />
+            <app-field label="Mailing" [text]="common.addressToArray(addressService.get('MAILING'))" [skipIfEmpty]="true" />
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Phone Numbers</div>
+        <div class="grid-2-column">
+            <app-field label="Home" [text]="common.formatPhone(phoneService.get('HOME'))" />
+            <app-field label="Mobile" [text]="common.formatPhone(phoneService.get('MOBILE'))" />
+            <app-field label="Business" [text]="common.formatPhone(phoneService.get('BUSINESS'))" />
+            <app-field label="Alternate" [text]="common.formatPhone(phoneService.get('ALTERNATE'))" [skipIfEmpty]="true" />
+        </div>
+    </div>
+</div>

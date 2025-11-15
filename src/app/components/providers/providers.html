@@ -1,1 +1,24 @@
-<p>providers works!</p>
+@let patient = personService.get();
+@let visit = encounterService.get();
+
+<div class="grid-2-column">
+    <div class="section">
+        <div class="section-title">Patient Provider Relationships</div>
+
+        @for (rel of sortedRelationships(patient?.prsnlReltn); track rel) {
+        <app-field [label]="rel.reltnType" [text]="rel.nameFullFormatted" />
+        }
+    </div>
+
+    <div class="section">
+        <div class="section-title">Provider Relationships this Visit</div>
+
+        <div class="grid-2-column">
+            @for (rel of sortedRelationships(visit?.prsnlReltn); track rel) {
+            <app-field [label]="rel.reltnType" [text]="rel.nameFullFormatted" />
+            }
+        </div>
+
+    </div>
+
+</div>

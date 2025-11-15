@@ -159,3 +159,41 @@
   color: var(--accent-color-alternate);
   font-size: smaller;
 }
+
+.grid-2-column, .grid-3-column, .grid-4-column {
+  display: grid;
+  gap: 4px;
+}
+
+.grid-2-column {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3-column {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4-column {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.zebra {
+  background-color: whitesmoke;
+}
+
+.section {  
+  border: 1px solid var(--primary-color);
+  margin-top: 0.25em;
+
+  > div {
+    padding: 4px;
+  }
+
+  .section-title {
+    text-align: center;
+    background-color: var(--primary-color);
+    color: var(--default-color);
+    font-size: large;
+    font-weight: 800;
+  }
+}

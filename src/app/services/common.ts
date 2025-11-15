@@ -1,5 +1,5 @@
 import { inject, Injectable, signal, WritableSignal } from '@angular/core';
-import { IAddress, MPageService } from '@clinicaloffice/mpage-developer';
+import { IAddress, IPhone, MPageService } from '@clinicaloffice/mpage-developer';
 
 @Injectable({
   providedIn: 'root',
@@ -37,7 +37,19 @@ export class Common {
           loadExtendedPersons: true
         },
         address: true,
-        phone: true
+        phone: true,
+        typeList: [
+          {codeSet: 333, type: 'ADMITDOC', typeCd: 0},
+          {codeSet: 333, type: 'ATTENDDOC', typeCd: 0},
+          {codeSet: 333, type: 'CONSULTDOC', typeCd: 0},
+          {codeSet: 333, type: 'ORDERDOC', typeCd: 0},
+          {codeSet: 333, type: 'REFERDOC', typeCd: 0},
+          {codeSet: 333, type: 'PRIMARYNURSE', typeCd: 0},
+          {codeSet: 333, type: 'EDPROVIDER', typeCd: 0},
+          {codeSet: 333, type: 'TRIAGEPROVIDER', typeCd: 0},
+          {codeSet: 333, type: 'NURSE', typeCd: 0},
+          {codeSet: 333, type: 'NURSEPRACTITIONER', typeCd: 0},
+        ]
       }
     }, -1, (() => {
       this.ready.set(true);
@@ -57,6 +69,13 @@ export class Common {
     }
 
     return formattedAddress;
+  }
+
+  // Format a phone number
+  public formatPhone(phone: IPhone | undefined): string {
+    if (!phone) return '';
+    return phone.extension !== '' ? (phone.phoneNumber.length === 10 ? phone.phoneFormatted : phone.phoneNumber) + ' x' + phone.extension : 
+      (phone.phoneNumber.length === 10 ? phone.phoneFormatted : phone.phoneNumber);
   }
 
 }

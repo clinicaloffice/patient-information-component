@@ -1,1 +1,30 @@
-<p>relationships works!</p>
+@let patient = personService.get();
+@let visit = encounterService.get();
+
+<div class="grid-2-column">
+    <div class="section">
+        <div class="section-title">Patient Relationships</div>
+
+        @for (rel of sortedRelationships(patient?.personReltn); track rel) {
+        <ng-container [ngTemplateOutlet]="relationshipTemplate" [ngTemplateOutletContext]="{rel, even: $even}" />
+        }
+    </div>
+
+    <div class="section">
+        <div class="section-title">Relationships this Visit</div>
+        @for (rel of sortedRelationships(visit?.personReltn); track rel) {
+        <ng-container [ngTemplateOutlet]="relationshipTemplate" [ngTemplateOutletContext]="{rel, even: $even}" />
+        }
+    </div>
+
+</div>
+
+<!-- Repeatable relationship template -->
+<ng-template #relationshipTemplate let-rel="rel" let-even="even">
+    <div class="grid-4-column" [class]="even ? '' : 'zebra'">
+        <app-field [label]="rel.personReltnType" [text]="rel.nameFullFormatted" />
+        <app-field label="Relationship" [text]="rel.personReltn" />
+        <app-field label="Home Phone" [text]="common.formatPhone(phoneService.get('HOME', rel.relatedPersonId ?? rel.personId))" />
+        <app-field label="Address" [text]="common.addressToArray(addressService.get('HOME', rel.relatedPersonId ?? rel.personId))" />
+    </div>
+</ng-template>
