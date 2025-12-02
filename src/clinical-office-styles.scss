@@ -596,6 +596,18 @@ button.co-raised-button {
   Start of Dialog styles
   ----------------------------
 */
+.co-dialog-container, .co-modal-dialog-container {
+  display: flex;
+  background: unset;
+  border: unset;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.co-modal-dialog-container {
+  height: 100%;
+}
+
 .co-dialog {
   background: var(--context-background-color);
   box-shadow: var(--context-shadow);

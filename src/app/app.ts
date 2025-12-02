@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, input, InputSignal, OnInit, signal, ViewEncapsulation, WritableSignal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MPageService, MpageLogComponent, AddressService, AllergyService, CodeValueService, ConfigService, CustomService, DiagnosisService, EncounterService, ErrorHandlerService, OrganizationService, PersonService, PhoneService, ProblemService, ReferenceService, PrsnlService, IMenuItem, TabbedMenuComponent } from '@clinicaloffice/mpage-developer';
+import { MPageService, MpageLogComponent, AddressService, AllergyService, CodeValueService, ConfigService, CustomService, DiagnosisService, EncounterService, Dialog, OrganizationService, PersonService, PhoneService, ProblemService, ReferenceService, PrsnlService, IMenuItem, TabbedMenuComponent } from '@clinicaloffice/mpage-developer';
 import { Common } from './services/common';
 import { Information } from './components/information/information';
 import { Relationships } from './components/relationships/relationships';
@@ -17,7 +17,7 @@ declare const VERSION: string;
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.ShadowDom,
   providers: [MPageService, AddressService, AllergyService, CodeValueService, ConfigService, CustomService,
-    DiagnosisService, EncounterService, ErrorHandlerService, OrganizationService, PersonService, PhoneService,
+    DiagnosisService, EncounterService, Dialog, OrganizationService, PersonService, PhoneService,
     ProblemService, PrsnlService, ReferenceService, Common]
 })
 export class App implements OnInit {
