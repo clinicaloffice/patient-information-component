@@ -1,16 +1,15 @@
 @if (!common.ready()) {
-<h2>Please Wait...Retrieving Patient Record.</h2>
+  <h2>Please Wait...Retrieving Patient Record.</h2>
 } @else {
-<div class="flex menu">
-    <tabbed-menu [tabs]="menuItems" (clickTab)="selectedMenu.set($event)" />
-</div>
+  <div class="flex menu">
+      <tabbed-menu [tabs]="menuItems" (clickTab)="selectedMenu.set($event)" />
+  </div>
 
-@switch (selectedMenu().idName) {
-@case('info') { <app-information /> }
-@case('reltionships') { <app-relationships /> }
-@case('provider-reltionships') { <app-providers /> }
-}
-
+  @switch (selectedMenu().idName) {
+    @case('info') { <app-information /> }
+    @case('reltionships') { <app-relationships /> }
+    @case('provider-reltionships') { <app-providers /> }
+  }
 }
 
 <mpage-log-component [properties]="{position: 'inline'}" />

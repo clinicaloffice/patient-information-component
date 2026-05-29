@@ -39,6 +39,7 @@
         "build": {
           "builder": "ngx-build-plus:browser",
           "options": {
+            "allowedCommonJsDependencies": ["crypto-js"],
             "outputPath": "dist/patient-information-component",
             "index": "src/index.html",
             "main": "src/main.ts",

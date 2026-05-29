@@ -14,7 +14,7 @@
   --text-color-alternate: grey;
   --font-family: 'Roboto Condensed';
   --font-generic-name: sans-serif;
-  --font-size: medium;
+  --font-size: small;
 
   /* Colors for context menus, dialogs and select drop-downs */
   --context-background-color: white;
@@ -181,7 +181,7 @@
   background-color: whitesmoke;
 }
 
-.section {  
+.section {
   border: 1px solid var(--primary-color);
   margin-top: 0.25em;
 
