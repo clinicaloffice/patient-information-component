@@ -54,7 +54,7 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/clinical-office-styles.scss"
+              "node_modules/@clinicaloffice/mpage-developer/styles/clinical-office-styles.scss"
             ],
             "extractLicenses": true,
             "sourceMap": false,
@@ -117,7 +117,7 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/clinical-office-styles.scss"
+              "node_modules/@clinicaloffice/mpage-developer/styles/clinical-office-styles.scss"
             ],
             "scripts": []
           }

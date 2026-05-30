@@ -33,7 +33,7 @@ declare const VERSION: string;
   imports: [MpageLogComponent, TabbedMenuComponent, Information, Relationships, Providers],
   templateUrl: './app.html',
   standalone: true,
-  styleUrls: ['../styles.scss', '../clinical-office-styles.scss'],
+  styleUrls: ['../styles.scss', '../../node_modules/@clinicaloffice/mpage-developer/styles/clinical-office-styles.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.ShadowDom,
   providers: [MPageService, MPageLogService, AddressService, AllergyService, CodeValueService, ConfigService, CustomService,
